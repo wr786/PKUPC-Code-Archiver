@@ -9,7 +9,8 @@ from selenium import webdriver
 option = webdriver.ChromeOptions()
 option.add_argument('disable-infobars')
 
-abspath = os.path.abspath(r"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe")
+#abspath = os.path.abspath(r"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe")
+abspath = os.path.join(os.path.abspath('.'), 'chromedriver.exe')
 browser = webdriver.Chrome(abspath)
 url = r'http://162.105.86.10/programming/'
 url2 = input("请输入您想要archive的题集的url:\n")
@@ -36,7 +37,6 @@ browser.implicitly_wait(3)
 browser.get(url2)
 data = browser.page_source.encode('UTF-8').decode()
 
-#pattern = re.compile(r'<a href="(.*?)"><font color="green">通过</font></a>')
 pattern = re.compile(r'<a href="(.*?)"><font color="green">通过</font></a>')
 problems = re.findall(pattern, data)
 

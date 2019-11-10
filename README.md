@@ -24,5 +24,6 @@
 
 ### 可能遇到的问题
 
-1. 报错与`chromedriver`相关： 请把该目录下的`chromedriver.exe`复制入`“C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe”`目录。 
-2. 报错与`chromedriver`相关且已经完成上一点：如果错误信息提示的是“和Chrome版本不一致”的意思，请自行将`chromedriver`和Chrome更新成同一个版本。
+1. `PKUPC-Code-Archiver`需要您先安装好`Python3`和`Google Chrome`。
+
+2. 报错与`chromedriver`相关：如果错误信息提示的是“和Chrome版本不一致”的意思，请自行将`chromedriver`和Chrome更新成同一个版本。
