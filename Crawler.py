@@ -62,6 +62,7 @@ for problem in problems:
     archive = archive[pos3+2:] # 去除开头注释
     archive = archive.replace("&lt;", '<') # replace竟然不会改变原字符串的内容！！！
     archive = archive.replace("&gt;", '>')
+    archive = archive.replace("&amp;", "&")
 
     file_path = os.path.join(os.path.abspath('.'), 'output', title[0] + '.cpp')
     f = codecs.open(file_path, 'w', 'utf-8')
