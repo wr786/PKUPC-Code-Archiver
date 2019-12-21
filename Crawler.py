@@ -6,33 +6,36 @@ import re
 import codecs
 from selenium import webdriver
 
+if not os.path.exists('output'):
+    os.mkdir('output')
+
 option = webdriver.ChromeOptions()
 option.add_argument('disable-infobars')
 
 #abspath = os.path.abspath(r"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe")
-abspath = os.path.join(os.path.abspath('.'), 'chromedriver.exe')
-browser = webdriver.Chrome(abspath)
 url = r'http://162.105.86.10/programming/'
 url2 = input("请输入您想要archive的题集的url:\n")
-
-browser.get(url)
-# 等待js脚本加载完毕
-browser.implicitly_wait(5)
-
 usr = input("请输入您的用户名:")
 psw = input("请输入您的密码(口令):")
+print("正在爬取您的Passed代码，请稍等...")
+
+abspath = os.path.join(os.path.abspath('.'), 'chromedriver.exe')
+browser = webdriver.Chrome(abspath)
+browser.get(url)
+# 等待js脚本加载完毕
+# browser.implicitly_wait(5)
 
 username = browser.find_element_by_xpath('//*[@id="username"]')
 username.send_keys(usr)
 password = browser.find_element_by_xpath('//*[@id="password"]')
 password.send_keys(psw)
 
-browser.implicitly_wait(3)
+# browser.implicitly_wait(3)
 
 login_button = browser.find_element_by_id('login')
 login_button.click()
 
-browser.implicitly_wait(3)
+# browser.implicitly_wait(3)
 
 browser.get(url2)
 data = browser.page_source.encode('UTF-8').decode()

@@ -12,6 +12,8 @@
 
 ### 使用方法
 
+0. `pip install -r requirements.txt`
+
 1. 启动目录下的`HAJIMERU.bat`，随后可能会跳出一个Chrome窗口，最小化即可，不用理睬。
 
 2. 在看到`请输入您想要archive的题集的url:`这句话后，复制粘贴您想要archive的题集的url。
